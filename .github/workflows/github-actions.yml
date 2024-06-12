@@ -9,8 +9,7 @@ jobs:
   deploy:
     name: deploy-test
     runs-on: ubuntu-latest
-    enviroment: test
-    url: https://api.test.com
+    environment: test
     strategy:
       matrix:
         node-version: [18.x]
