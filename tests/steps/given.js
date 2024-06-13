@@ -3,14 +3,14 @@ AWS.config.region = "us-east-1";
 const cognito = new AWS.CognitoIdentityServiceProvider();
 
 exports.an_authenticated_user = async () => {
-  const userPoolId = process.env.COGNITO_USER_POOL_ID;
-  const clientId = process.env.COGNITO_USER_POOL_CLIENT_ID;
+  const userPoolId = process.env.USER_POOL_ID;
+  const clientId = process.env.CILENT_ID;
   const username = process.env.USERNAME;
   const password = process.env.PASSWORD;
 
   const params = {
-    ClientId: clientId,
     UserPoolId: userPoolId,
+    ClientId: clientId,
     AuthFlow: "ADMIN_NO_SRP_AUTH",
     AuthParameters: {
       USERNAME: username,
